@@ -11,6 +11,12 @@ RUN amazon-linux-extras install nginx1 -y
 
 copy ajustes-site.sh /bin/
 
+RUN mkdir -p /var/www/
+
+copy var/site1 /var/www/site1
+
+copy nginx-conf/site1.conf /etc/nginx/conf.d/site1.conf 
+
 run chmod 744 /bin/ajustes-site.sh
 
 #CMD ["/bin/bash"]
