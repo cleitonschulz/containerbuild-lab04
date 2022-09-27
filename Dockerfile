@@ -9,7 +9,7 @@ RUN amazon-linux-extras enable nginx1 -y
 
 RUN yum install net-tools procps nginx -y
 
-copy ajustes-site.sh /bin/
+copy ajustes/ajustes-site.sh /usr/bin/ajustes-site.sh
 
 RUN mkdir -p /var/www/
 
@@ -22,4 +22,4 @@ run chmod 744 /bin/ajustes-site.sh
 #CMD ["/bin/bash"]
 #CMD ["/usr/sbin/init"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
-ENTRYPOINT ["/bin/ajustes-site.sh"]
+ENTRYPOINT ["/usr/bin/ajustes-site.sh"]
